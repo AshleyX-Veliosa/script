@@ -3,10 +3,10 @@ repeat task.wait() until game:GetService("Players").LocalPlayer:FindFirstChild("
 repeat task.wait() until game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("Main")
 repeat task.wait() until (game.Players.LocalPlayer.Neutral == false) == true
 
-local pbag = ({...})[1]
-local host = pbag[1]
-local key = pbag[2]
-local machine = pbag[3]
+local uytg = ({...})[1]
+local host = uytg[1]
+local id = uytg[2]
+local machine = uytg[3]
 
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
@@ -216,9 +216,9 @@ function sendRequest()
         Method = "POST",
         Headers = {
             ["Content-Type"] = "application/json",
-            ["Authorization"] = key,
         },
         Body = HttpService:JSONEncode({
+            ["id"] = id,
             ["Account"] = LocalPlayer.DisplayName,
             ["Type"] = getType(),
             ["Level"] = getLevel(),
